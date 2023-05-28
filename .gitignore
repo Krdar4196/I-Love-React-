@@ -1,0 +1,39 @@
+# Next.js
+.next/
+out/
+
+# パッケージ関連
+node_modules/
+
+# キャッシュとログ
+*.log
+.pnpm-store/
+.pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+npm-debug.log*
+pnpm-debug.log*
+.npm/
+
+# 環境変数
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ビルドキャッシュ
+.next/cache/
+.next/production-ssr-lock
+.next/images/
+
+# パッケージマネージャのキャッシュ
+.pnp/
+.pnp.js
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# テスト関連
+coverage/
+.jest/
