@@ -2,27 +2,28 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 
+const HEARTS = ['💙', '💚', '💛', '💖', '💜', '💘'];
+
+
 function Header({ title = 'Default Title.' }) {
   return <h1>{title}</h1>;
 }
 
 function calculateHeart(likes) {
-  if (likes < 1) return "💙";
-  if (likes < 5) return "💚";
-  if (likes < 10) return "💛";
-  if (likes < 20) return "💖";
-  if (likes < 50) return "💜";
-  return "💘";
+  if (likes < 1) return HEARTS[0];
+  if (likes < 5) return HEARTS[1];
+  if (likes < 10) return HEARTS[2];
+  if (likes < 20) return HEARTS[3];
+  if (likes < 50) return HEARTS[4];
+  return HEARTS[5];
 }
 
 function calculateLink(hearts) {
-  if (hearts == "💘") return "next love";
+  if (hearts === HEARTS[5]) return "next love";
   return "";
 }
 
 export default function HomePage() {
-  const values = ['💙', '💚', '💛', '💖', '💜', '💘'];
-
   const [likes, setLikes] = useState(0);
   const [hearts, setHearts] = useState("♡");
   const [links, setLinks] = useState("");
@@ -43,7 +44,7 @@ export default function HomePage() {
     <div>
       <Header title={`I love React ${hearts}`} />
       <ul>
-        {values.map((value) => (
+        {HEARTS.map((value) => (
           <li key={value}>{value}</li>
         ))}
       </ul>
